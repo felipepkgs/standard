@@ -11,7 +11,7 @@ class StandardServiceProvider extends ServiceProvider
          // Register commands only for the console
          if ($this->app->runningInConsole()) {
             $this->commands([
-                StandardizeCommand::class,
+                \Felipepkgs\Standard\Console\Commands\StandardizeCommand::class,
             ]);
         }
     }

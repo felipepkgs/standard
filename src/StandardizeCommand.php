@@ -1,7 +1,6 @@
 <?php 
 namespace Felipepkgs\Standard\Console\Commands;
 
-
 use Illuminate\Console\Command;
 
 class StandardizeCommand extends Command
