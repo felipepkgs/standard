@@ -1,0 +1,1 @@
+Standardize code seamlessly
