@@ -1,5 +1,6 @@
 <?php 
-namespace App\Console\Commands;
+namespace Felipepkgs\Standard\Console\Commands;
+
 
 use Illuminate\Console\Command;
 
@@ -17,13 +18,13 @@ class StandardizeCommand extends Command
     {
         $this->info('Standardizing code...');
 
-        $this->call('rector:process', [
-            '--config' => base_path('rector-config.php'),
-        ]);
+        // $this->call('rector:process', [
+        //     '--config' => base_path('rector-config.php'),
+        // ]);
 
-        $this->call('pint', [
-            '--config' => base_path('pint.json'),
-        ]);
+        // $this->call('pint', [
+        //     '--config' => base_path('pint.json'),
+        // ]);
 
         $this->info('Code has been standardized!');
     }

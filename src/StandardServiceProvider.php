@@ -1,26 +1,23 @@
 <?php
 
-use Illuminate\Console\Events\CommandFinished;
-use Illuminate\Contracts\Support\DeferrableProvider;
+namespace Felipepkgs\Standard;
+
 use Illuminate\Support\ServiceProvider;
 
-use App\Console\Commands\StandardizeCommand;
-
-class StandardServiceProvider extends ServiceProvider implements DeferrableProvider
+class StandardServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->commands(
-            [
+         // Register commands only for the console
+         if ($this->app->runningInConsole()) {
+            $this->commands([
                 StandardizeCommand::class,
-            ]
-        );
+            ]);
+        }
     }
 
-    public function provides()
+    public function boot()
     {
-        return [
-            StandardizeCommand::class,
-        ];
+        // Publish config, migrations, views, etc.
     }
 }
